@@ -1,0 +1,10 @@
+.clima{
+    background: linear-gradient(273deg, rgba(88, 54, 179, 1) 0%, rgba(89, 54, 180, 1) 35%,  rgba(54, 42, 132, 1) 100%);;
+    
+}
+.clima2{
+    background: linear-gradient(rgba(229, 242, 255, 1), rgba(229, 242, 255, 1), rgba(213, 243, 255, 1));
+}
+.clima3{
+    background: radial-gradient(50.00% 50.00% at 50.00% 50.00%, #D5F3FF 0%, #51B4E8 99.99%);
+}

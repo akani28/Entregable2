@@ -26,8 +26,8 @@ function App() {
  
 
   return (
-    <main className='bg-black min-h-screen text-white font-lato'>
-      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatem?</h2>
+    <main className='clima3 min-h-screen text-[#026EED] font-lato flex justify-center items-center'>
+     
       <Weather weatherInfo={weatherInfo}/>
    
     </main>
