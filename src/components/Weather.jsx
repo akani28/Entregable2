@@ -2,15 +2,20 @@ import React from "react";
 
 const Weather = ({ weatherInfo }) => {
   console.log(weatherInfo);
+  const convertTemp=(temp)=>{
+    const tempCelsius = temp-273.15;
+    return tempCelsius.toFixed(1);
+
+  }
   return (
     <section>
-      <h2>lugar</h2>
+      <h2>{weatherInfo?.name}</h2>
       <section>
         {/*seccion superior*/}
         <section className=" clima2  text-[#026EED] p-3 rounded-2xl">
-          <p>Cielo Despejado</p>
+          <p>{weatherInfo?.weather[0].description}</p>
           <div>
-            <p>21º</p>icono
+            <p>{convertTemp(weatherInfo?.main.temp)}°C</p>icono
           </div>
         </section>
         <section className=" clima2  text-[#026EED] p-3 rounded-2xl">
