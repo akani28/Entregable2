@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Weather = ({ weatherInfo }) => {
+  const [isCelsius, setIsCelsius] = useState(true)
   console.log(weatherInfo);
   const convertTemp = (temp) => {
     const tempCelsius = temp - 273.15;
     return tempCelsius.toFixed();
   };
+  const kelvinToFarenheit=(tempkelvin)=>{
+
+    return ((tempkelvin-273.15)*(9/5)+32).toFixed()
+
+  }
+  const handleConvertTemp=()=>{
+    setIsCelsius(!isCelsius);
+
+  }
   return (
     <section className="grid content-center gap-8">
       <section className="flex flex-row justify-between p-4">
@@ -21,7 +31,12 @@ const Weather = ({ weatherInfo }) => {
             <section className="content flex justify-between flex-row content-start text-[79px] font-light">
 
               <article className="content_info">
-              <p className="tempNumber">{convertTemp(weatherInfo?.main.temp)}°</p>
+              <p className="tempNumber">
+                {isCelsius ? (convertTemp(weatherInfo?.main.temp))+"°":(kelvinToFarenheit(weatherInfo?.main.temp))+"°"}
+                {/* {convertTemp(weatherInfo?.main.temp)}° */}
+                
+                </p>
+
               <article className="properties flex flex-col text-[13px] text-[#56A5F1] font-semibold">
                 <span>Wind_speed: {weatherInfo?.wind.speed}m/s</span>
                 <span>Humidity: {weatherInfo?.main.humidity}%</span>
@@ -49,7 +64,7 @@ const Weather = ({ weatherInfo }) => {
         </section>
       </section>
       <span className="grid justify-center content-center">
-      <button className="bg-[#38A1D8] text-[#FFFFFF] py-2 px-6 rounded-2xl">Cambiar a ºF</button>
+      <button onClick={handleConvertTemp} className="bg-[#38A1D8] text-[#FFFFFF] py-2 px-6 rounded-2xl">Cambiar a ºF</button>
       </span>
     
     </section>
