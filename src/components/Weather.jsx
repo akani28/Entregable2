@@ -2,47 +2,56 @@ import React from "react";
 
 const Weather = ({ weatherInfo }) => {
   console.log(weatherInfo);
-  const convertTemp=(temp)=>{
-    const tempCelsius = temp-273.15;
-    return tempCelsius.toFixed(1);
-
-  }
+  const convertTemp = (temp) => {
+    const tempCelsius = temp - 273.15;
+    return tempCelsius.toFixed();
+  };
   return (
-    <section>
-      <h2>{weatherInfo?.name}</h2>
+    <section className="grid content-center gap-8">
+      <section className="flex flex-row justify-between p-4">
+        <div className="text-[#FFF] text-[19px] font-semibold">WeatherAkani</div>
+        <div>
+          <button className="bg-white rounded-xl px-2">dark/ligth</button>
+        </div>
+      </section>
+{/*bg-[url('./images/bg1.png')]*/}
       <section>
-        {/*seccion superior*/}
-        <section className=" clima2  text-[#026EED] p-3 rounded-2xl">
-          <p>{weatherInfo?.weather[0].description}</p>
+        <section className=" fondo w-80 h-56 text-[#026EED] p-2 rounded-2xl">
           <div>
-            <p>{convertTemp(weatherInfo?.main.temp)}°C</p>icono
+            <section className="content flex justify-between flex-row content-start text-[79px] font-light">
+
+              <article className="content_info">
+              <p className="tempNumber">{convertTemp(weatherInfo?.main.temp)}°</p>
+              <article className="properties flex flex-col text-[13px] text-[#56A5F1] font-semibold">
+                <span>viento</span>
+                <span>Nubes</span>
+                <span>Presion</span>
+              </article>
+              </article>
+           
+            <img className="w-40 h-40"
+                  src={`https://openweathermap.org/img/wn/${weatherInfo?.weather[0].icon}@4x.png`}
+                  alt=""
+                />
+            
+            </section>
+            
+            <section className="flex flex-row justify-between">
+            
+             
+            </section>
+
+            <section className=" flex flex-shrink justify-between text-[19px] font-semibold ">
+              <h2>{weatherInfo?.name}, {weatherInfo?.sys.country}</h2>
+              <p className="text-[12px] font-semibold">{weatherInfo?.weather[0].description}</p>
+            </section>
           </div>
         </section>
-        <section className=" clima2  text-[#026EED] p-3 rounded-2xl">
-          seccion inferior
-          <article>
-            <div>
-              <img src="" alt="" />
-            </div>
-            <span>Viento</span>
-          </article>
-          <article>
-            <div>
-              <img src="" alt="" />
-            </div>
-            <span>Humedad</span>
-          </article>
-
-          <article>
-            <div>
-              <img src="" alt="" />
-            </div>
-            <span>Presion</span>
-          </article>
-
-        </section>
       </section>
-      <button className="bg-[#38A1D8] text-[#FFFFFF]">Cambiar a ºF</button>
+      <span className="grid justify-center content-center">
+      <button className="bg-[#38A1D8] text-[#FFFFFF] py-2 px-6 rounded-2xl">Cambiar a ºF</button>
+      </span>
+    
     </section>
   );
 };

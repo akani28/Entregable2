@@ -26,7 +26,7 @@ function App() {
  
 
   return (
-    <main className='clima3 min-h-screen text-[#026EED] font-lato flex justify-center items-center'>
+    <main className='clima3 min-h-screen text-[#026EED] font-lato justify-center grid content-center p-2'>
      
       <Weather weatherInfo={weatherInfo}/>
    
