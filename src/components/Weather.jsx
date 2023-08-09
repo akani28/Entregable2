@@ -23,9 +23,9 @@ const Weather = ({ weatherInfo }) => {
               <article className="content_info">
               <p className="tempNumber">{convertTemp(weatherInfo?.main.temp)}°</p>
               <article className="properties flex flex-col text-[13px] text-[#56A5F1] font-semibold">
-                <span>viento</span>
-                <span>Nubes</span>
-                <span>Presion</span>
+                <span>Wind_speed: {weatherInfo?.wind.speed}m/s</span>
+                <span>Humidity: {weatherInfo?.main.humidity}%</span>
+                <span>Pressure: {weatherInfo?.main.pressure}hPa</span>
               </article>
               </article>
            
