@@ -64,7 +64,10 @@ const Weather = ({ weatherInfo }) => {
         </section>
       </section>
       <span className="grid justify-center content-center">
-      <button onClick={handleConvertTemp} className="bg-[#38A1D8] text-[#FFFFFF] py-2 px-6 rounded-2xl">Cambiar a ºF</button>
+      <button onClick={handleConvertTemp} className="bg-[#38A1D8] text-[#FFFFFF] py-2 px-6 rounded-2xl">
+        {
+          isCelsius?("Change to °F"):("Change to °C")
+        }</button>
       </span>
     
     </section>
